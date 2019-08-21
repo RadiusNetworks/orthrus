@@ -1,5 +1,6 @@
 # Orthrus
 Bluetooth direction finding tools
+
 ![](img/orthrus.jpg)
 
 ## Summary
@@ -8,8 +9,10 @@ This repo contains python tools for interacting with the dialog semiconductior A
 ## Requirements
 - AoA development kit. The kit contains a receiver board(DA1469x AoA antenna board + daughter board) and a transmitter USB dongle board
 ![](img/aoa_demo_kit.jpg)
+
 - ToF development kit. The kit contains a receiver board(DA1469x board + daughter board) and a transmitter USB dongle board
 ![](img/tof_demo_kit.jpg)
+
 - python3
 - pip3
 
