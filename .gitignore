@@ -54,3 +54,4 @@ dkms.conf
 # Directories
 log/
 venv/
+__pycache__/
