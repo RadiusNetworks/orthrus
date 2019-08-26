@@ -10,6 +10,7 @@ class SerialDevice:
     device_id = 0x6010
     baud_rate = 115200
     timeout = 1
+    dev_list = []
     
     def __init__(self):
         self.port = None
@@ -19,18 +20,32 @@ class SerialDevice:
         port = None
         for i in list_ports.comports():
             if i.vid == vid and i.pid == pid:
-                device = i.device
-                break
-        if device:
-            try:
-                port = Serial(port=device, baudrate=self.baud_rate, timeout=self.timeout)
-                print('Serial Device found: ' + device)
-                print("Serial Device Ready\r\nOpening port...")
-            except SerialException:
-                print('Couldn\'t open port')
-                sys.exit()
+                self.dev_list.append(i.device)
+
+        if len(self.dev_list) > 0:
+    
+            print("Devices available:")
+    
+            for dev in self.dev_list:
+                selection_str = "{}) {}"
+                print(selection_str.format(self.dev_list.index(dev), dev))
+
+            sys.stdout.write("Select device from list:")
+            sys.stdout.flush()
+            dev_index = int(sys.stdin.readline())
+        
+            if dev_index < len(self.dev_list):
+                try:
+                    port:Serial = Serial(port=self.dev_list[int(dev_index)], baudrate=self.baud_rate, timeout=self.timeout)
+                    print('Serial Device found: ' + self.dev_list[int(dev_index)])
+                    print("Serial Device Ready\r\nOpening port...")
+                except SerialException as e:
+                    print('Couldn\'t open port')
+                    sys.exit()
+            else:
+                print("Invalid device selection, try again")
         else:
-            print('Serial Device not found, connect a device and try again')
+            print('Serial device not found, connect a device and try again')
             
         return port
     

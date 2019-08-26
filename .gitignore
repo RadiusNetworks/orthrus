@@ -55,4 +55,5 @@ dkms.conf
 # Directories
 log/
 venv/
+.idea/
 __pycache__/
