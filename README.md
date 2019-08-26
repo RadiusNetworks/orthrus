@@ -7,14 +7,18 @@ Bluetooth direction finding tools
 This repo contains python tools for interacting with the dialog semiconductior Angle-of-Arrival(AoA) and Time-of-Flight(ToF) development kits based on the DA1469x chipset.
 
 ## Requirements
-- AoA development kit. The kit contains a receiver board(DA1469x AoA antenna board + daughter board) and a transmitter USB dongle board
+- AoA development kit flashed with AoA Demo firmware From Dialog Semi. The kit contains a receiver board(DA1469x AoA antenna board + daughter board) and a transmitter USB dongle board
 ![](img/aoa_demo_kit.jpg)
 
-- ToF development kit. The kit contains a receiver board(DA1469x board + daughter board) and a transmitter USB dongle board
+- ToF development kit flashed with ToF Demo firmware From Dialog Semi. The kit contains a receiver board(DA1469x board + daughter board) and a transmitter USB dongle board
 ![](img/tof_demo_kit.jpg)
 
 - python3
 - pip3
+
+## Getting Started with Demo Kits
+To flash the demo boards, unzip the two firmware demo packages located in the [dialog-semi firmware](firmware/dialogSemi_aoa_tof_firmware) directory. Follow the instructions contain inside the packages to flash the kits with the appropriate binaries.
+
 
 ## Installation
 1. Download zip or clone repo to your machine
