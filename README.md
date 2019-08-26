@@ -18,9 +18,10 @@ This repo contains python tools for interacting with the dialog semiconductior A
 
 ## Installation
 1. Download zip or clone repo to your machine
-2. Run `which python3`, if a path to `python3` is returned, move on to step 4
+2. Run `which python3` to check if python3 is installed. If a path to `python3` is returned, skip step 3
 3. Run `brew install python3`
-4. From the project root directory, run `pip3 -r requirements.txt` to install required python packages
+4. Run `pip3`. If `pip3` is not found, run `brew  update` to get latest version of pip3
+5. From the project root directory, run `pip3 -r requirements.txt` to install dependencies
 
 ## Run AoA Demo
 1. Connect AoA receiver board to your machine to establish serial communication
